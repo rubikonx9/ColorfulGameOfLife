@@ -1,7 +1,7 @@
 #ifndef _INIT_H_
 #define _INIT_H_
 
-#include <GL3/gl3w.h>
+#include <GL/gl3w.h>
 #include <GL/glfw.h>
 #include "GL/GL.h"
 
@@ -18,7 +18,7 @@ struct Init {
 //		glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR, 3);
 //		glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 3);
 //		glfwOpenWindowHint(GLFW_OPENGL_FORWARD_COMPAT, true);
-//		glfwOpenWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+		// glfwOpenWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 		glfwOpenWindowHint(GLFW_WINDOW_NO_RESIZE, true);
 
@@ -39,7 +39,7 @@ struct Init {
 			return;
 		}
 
-//		std::clog << GL::getVersion();
+		// std::clog << GL::getVersion();
 	}
 	~Init() {
 		glfwTerminate();
