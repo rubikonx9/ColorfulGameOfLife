@@ -1,6 +1,6 @@
-include_dirs = -I../gl3w/include/
-libs = -lglfw -lGL -lX11 -pthread -lgl3w -lXrandr
-libs_dirs = -L../gl3w/lib/
+include_dirs = -I../gl3w/include/ -I../boost/ -I../glfw/include/
+libs_dirs    = -L../gl3w/lib/ -L../glfw/lib-mingw/
+libs         = -lglfw -lgl3w -lopengl32
 
 DEFAULT: life
 

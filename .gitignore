@@ -1,0 +1,8 @@
+# Compiled objects
+*.o
+
+# Executable
+life.exe
+
+# DLLs
+*.dll
