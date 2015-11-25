@@ -2,10 +2,7 @@
 
 uniform samplerBuffer sampler;
 uniform int screenSizeX;
-uniform int screenSizeY;
 
-in vec3 vPosition;
-in vec2 vTexCoord;
 out vec4 fragmentColor;
 
 int translateToLinearPosition(int x, int y) {
@@ -26,13 +23,5 @@ vec4 getBlurred(int n) {
 }
 
 void main() {
-	vec3 color = vec3(0.0, 0.0, 0.0);
-	
-	int position = translateToLinearPosition(int(gl_FragCoord.x), int(gl_FragCoord.y));
-	vec4 texel = texelFetch(sampler, position);
-//	if(texel.r != 1.0 && texel.g != 1.0 && texel.b != 1.0) {
-		texel = getBlurred(2);
-//	}
-
-	fragmentColor = texel;
+	fragmentColor = getBlurred(2);
 }

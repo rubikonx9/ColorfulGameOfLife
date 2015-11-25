@@ -14,12 +14,6 @@ struct Init {
 			return;
 		}
 
-//		glfwOpenWindowHint(GLFW_FSAA_SAMPLES, 1);
-//		glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR, 3);
-//		glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 3);
-//		glfwOpenWindowHint(GLFW_OPENGL_FORWARD_COMPAT, true);
-		// glfwOpenWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
 		glfwOpenWindowHint(GLFW_WINDOW_NO_RESIZE, true);
 
 		if(!glfwOpenWindow(screenSizeX, screenSizeY, 8, 8, 8, 8, 8, 8, GLFW_WINDOW)) {
@@ -38,13 +32,11 @@ struct Init {
 			glfwTerminate();
 			return;
 		}
-
-		// std::clog << GL::getVersion();
 	}
+
 	~Init() {
 		glfwTerminate();
 	}
 };
-
 
 #endif //_INIT_H_

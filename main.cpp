@@ -1,5 +1,6 @@
 #include <iostream>
 #include <boost/foreach.hpp>
+#include <unistd.h>
 #include "GL/Program.h"
 
 #define foreach BOOST_FOREACH
@@ -55,7 +56,6 @@ void setUp() {
 
 	glUniform1i(program.uniform("sampler"), 0);	//Texture Unit 0
 	glUniform1i(program.uniform("screenSizeX"), screenSizeX);
-	glUniform1i(program.uniform("screenSizeY"), screenSizeY);
 
 	for(unsigned x = 0; x < textureSizeX; ++x) {
 		for(unsigned y = 0; y < textureSizeY; ++y) {
@@ -214,6 +214,8 @@ int main() {
 		live();
 		writeData(rawPixels);
 		draw();
+
+		sleep(1);
 
 		glfwSwapBuffers();
 	}
